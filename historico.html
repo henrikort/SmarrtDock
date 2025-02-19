@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Documentos</title>
+    <link rel="stylesheet" href="nav-footer.css">
+    <link rel="stylesheet" href="historico.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo1">
+            <a href="#" class="nav-link" onclick="connectMetaMask()">Login</a>
+        </div>
+        
+        <div class="logo2">
+            <a href="index.html" class="logo-link">
+                <div class="logo-content">
+                    <img src="document (2).png" alt="logo2">
+                    <span class="logo-text">SmartDoc</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="menu-escondido">
+            <a href="index.html">Home</a>
+            <a href="blockchain.html">Blockchain</a>
+            <a href="enviar.html">Painel</a>
+        </div>
+
+        <div class="menu">
+            <button class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="saldo">
+                <p>Saldo: <strong>R$30,00</strong></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="enviar.html"><img src="upload_file_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Upload"> Enviar Arquivo</a></li>
+                    <li><a href="historico.html"><img src="history_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Histórico"> Histórico de Arquivos</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>Histórico de Documentos</h1>
+            <table id="document-history">
+                <thead>
+                    <tr>
+                        <th>Nome do Arquivo</th>
+                        <th>Tipo</th>
+                        <th>Data</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os dados do usuário serão carregados aqui -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-div content">
+                <h2>Sobre o site</h2>
+                <p>
+                    projeto integrador senac rs caxias do sul
+                </p>
+            </div>
+            <div class="footer-div social">
+                <h2>Links Oficiais </h2>
+                <a ><img src="instagram.png" alt="Instagram"></a>
+
+                <a  ><img src="social-media.png" alt="Twitter"></a>
+                </a>
+                <div>
+                    <a href="" target="_blank" class="l-footerlink">
+                        <span class="highlighted">SmartDoc</span>
+                        <span class="smaller">Official Web Site</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; SmartDoc</p>
+        </div>
+    </footer>
+    <script src="menu.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let tbody = document.querySelector("#document-history tbody");
+            tbody.innerHTML = "";
+    
+            let documentosRegistrados = JSON.parse(localStorage.getItem("historicoDocs")) || [];
+    
+            if (documentosRegistrados.length === 0) {
+                tbody.innerHTML = "<tr><td colspan='4'>Nenhum documento registrado.</td></tr>";
+                return;
+            }
+    
+            documentosRegistrados.forEach(doc => {
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${doc.nome}</td>
+                    <td>${doc.tipo}</td>
+                    <td>${doc.data}</td>
+                    <td>
+                        <a href="#" class="download-btn" data-url="${doc.url}" data-name="${doc.nome}">
+                            <img src="talvezesse.png" alt="Download" style="cursor: pointer; width: 24px; height: 24px;">
+                        </a>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+    
+            // Adiciona evento para forçar o download sem abrir nova guia
+            document.querySelectorAll(".download-btn").forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const fileUrl = this.getAttribute("data-url");
+                    const fileName = this.getAttribute("data-name");
+                    
+                    fetch(fileUrl)
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const a = document.createElement("a");
+                            a.href = URL.createObjectURL(blob);
+                            a.download = fileName;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                        })
+                        .catch(error => console.error("Erro ao baixar o arquivo:", error));
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

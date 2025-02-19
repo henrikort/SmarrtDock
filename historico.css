@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.saldo {
+    background: #444;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    visibility: hidden; /* Oculta o conteúdo, mas mantém o espaço */
+
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+/* Sidebar menor com ícones e textos */
+.sidebar {
+    width: 15%;
+    background: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar nav ul li img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.sidebar nav ul li a:hover {
+    color: #28a745;
+}
+
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+td {
+    text-align: center;
+}
+
+
+/* Garante que o ícone fique centralizado e com tamanho adequado */
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-btn img {
+    width: 60px; /* Aumente o tamanho aqui */
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Aumenta ainda mais ao passar o mouse */
+.download-btn img:hover {
+    transform: scale(1.5);
+}
+
+

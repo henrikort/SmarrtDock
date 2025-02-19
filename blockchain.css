@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color:white;
+    font-family: "Raleway", serif;
+
+}
+
+/* Primeira seção: Explicação da Blockchain */
+.blockchain-intro {
+    width: 90%;
+    margin: 60px auto;
+}
+
+.blockchain-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12%;
+}
+
+.text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.text h1 {
+    color: #ff6600f5;
+    font-size: 42px;
+    font-family: "Raleway", serif;
+}
+
+
+.text p {
+    font-size: 27px;
+    line-height: 1.5;
+    font-family: "Raleway", serif;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    width: 60%;
+    max-width: 450px;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+    
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Segunda seção: Benefícios da Blockchain */
+.blockchain-benefits {
+    background-color: black;
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Três colunas separadas */
+    width: 80%;
+    margin: 0 auto;
+    gap: 40px; /* Espaço entre os elementos */
+    align-items: center;
+    text-align: center;
+}
+
+/* Coluna esquerda */
+.benefits-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 39px;
+    font-size: 18px;
+
+}
+
+/* Coluna do meio */
+.benefit-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.0); /* Diminui a imagem */
+    transition: transform 0.5s ease;
+}
+
+.benefit-center:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+.benefit-center img {
+    width: 120%;
+    max-width: 750px;
+}
+
+/* Coluna direita */
+.benefits-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 39px;
+    font-size: 18px;
+
+}
+
+
+
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%; /* Aumenta a largura */
+    max-width: 1300px; /* Deixa maior */
+    margin: 45px auto; /* Centraliza e dá mais espaçamento */
+    padding: 30px; /* Mais espaço interno */
+    background: black; /* Fundo preto */
+    
+}
+
+.contact-left {
+    flex: 1;
+    text-align: left;
+    color: white; /* Texto branco */
+}
+
+.contact-left h2 {
+    font-size: 30px; /* Texto maior */
+    color: #eb7227; /* Laranja */
+    margin-bottom: 10px;
+}
+
+.contact-left p {
+    font-size: 20px;
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box {
+    background: black; /* Fundo preto */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-box h3 {
+    font-size: 22px;
+    color: #eb7227;
+    margin-bottom: 15px;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-box label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255); /* Texto branco */
+}
+
+.contact-box input {
+    padding: 12px;
+    border: 1px solid #eb7227; /* Borda laranja */
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Texto branco */
+}
+
+.contact-box button {
+    background: #ed6714;
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Botão maior */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact-box button:hover {
+    background: #cc5200;
+}

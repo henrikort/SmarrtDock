@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.saldo {
+    visibility: hidden; /* Oculta o conteúdo, mas mantém o espaço */
+
+    background: #444;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar menor com ícones e textos */
+.sidebar {
+    width: 15%;
+    background: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar nav ul li img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.sidebar nav ul li a:hover {
+    color: #28a745;
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Área de upload um pouco maior */
+.file-preview {
+    width: 400px;
+    height: 250px;
+    border: 3px dashed #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    background: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Borda fica mais destacada ao arrastar */
+.file-preview.dragover {
+    border: 3px dashed #28a745;
+}
+
+
+#file-input {
+    display: none;
+}
+
+
+/* Alinhando os botões abaixo do file-preview */
+#upload-form {
+    display: flex;
+    flex-direction: column; /* Faz os botões ficarem um abaixo do outro */
+    align-items: center; /* Centraliza os botões */
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 20px; /* Espaço entre a área de upload e os botões */
+}
+
+/* Estilizando os botões individualmente */
+
+/* Tipo de Documento (Laranja) */
+#upload-form button[type="submit"] {
+    background: transparent;
+    color: #ff6600f5;
+    border: 2px solid #ff6600f5;
+    position: relative;
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease-in-out, background 0.35s ease-in-out;
+}
+
+#upload-form button[type="submit"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff6600f5;
+    transition: width 0.35s ease-in-out;
+    z-index: 1;
+}
+
+#upload-form button[type="submit"]:hover {
+    color: white !important;
+}
+
+#upload-form button[type="submit"]:hover::after {
+    width: 100%;
+    z-index: -1;
+}
+
+
+
+
+
+
+/* Cancelar (Vermelho) */
+#clear-file {
+    background: transparent;
+    color: #ff003b;
+    border: 2px solid #ff003b;
+    position: relative;
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease-in-out, background 0.35s ease-in-out;
+}
+
+#clear-file::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: width 0.35s ease-in-out;
+    z-index: 1;
+}
+
+#clear-file:hover {
+    color: white !important;
+}
+
+#clear-file:hover::after {
+    width: 100%;
+    z-index: -1;
+}
+
+/* Enviar (Verde) */
+#confirm-document {
+    background: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+    position: relative;
+    display: block;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease-in-out, background 0.35s ease-in-out;
+}
+
+#confirm-document::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #28a745; /* Cor do hover */
+    transition: width 0.35s ease-in-out;
+    z-index: 1;
+}
+
+.modal {
+    display: none ;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content select, .modal-content button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+

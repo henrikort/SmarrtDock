@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color:white;
+    font-family: "Raleway", serif;
+
+}
+
+/* imagem a direita texto a esquerda */
+
+.info-div {
+    position: relative;
+    width: 80%; /* Reduzindo a largura para centralizar melhor */
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border-left: 3px solid rgba(255, 255, 255, 0); /* Borda lateral esquerda */
+    border-right: 3px solid rgba(255, 255, 255, 0); /* Borda lateral direita */
+    border-radius: 18px;
+}
+
+.info-div .content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; 
+}
+
+.info-div h2 {
+    color: #ff6600f5;
+    font-size: 39px;
+    font-family: "Raleway", serif; /* Reduzindo o tamanho do título FONTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+    font-family: "Lora", sans-serif; 
+    margin: 20px;
+    text-align: center;
+    margin-right:450px;
+}
+
+.info-div p {
+    flex: 1; 
+    margin: 27px;
+    font-size: 24px; 
+    line-height: 1.8;
+    text-align: center;
+}
+
+.info-div img {
+    max-width: 25%; /* Reduzindo tamanho da imagem */
+    height: auto;
+    border-radius: 15px;
+    margin-left: 0;
+}
+
+
+
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.info-div img, .info-div2 img {
+    max-width: 45%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+
+
+.info-div-banners-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Define a altura da div para cobrir a altura da viewport */
+    overflow: hidden;
+}
+
+.info-div-banners-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img2/NIERA_WORLD_CityRuins_01.jpg') center/cover no-repeat;
+    filter: brightness(50%); /* Ajuste o valor para mais ou menos escurecimento */
+    z-index: -1; /* Coloca a imagem de fundo atrás do conteúdo */
+}
+
+.info-div-banners {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    position: relative; /* Necessário para que o ::before funcione corretamente */
+    padding: 20px;
+}
+
+.info-section {
+    flex: 1;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.info-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-size: 24px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    line-height: 2.4;
+
+}
+
+.info-section a {
+    color: #ffffff; /* Cor prata/platinada */
+    text-decoration: underline;
+    font-size: 24px;
+    display: block; /* Faz o link ocupar toda a largura disponível */
+    text-align: center; /* Centraliza o texto dentro do bloco */
+    margin-top: 15px; /* Espaçamento acima do link */
+}
+
+
+
+
+

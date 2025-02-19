@@ -1,0 +1,386 @@
+
+html, body {
+    overflow-x: hidden; /* Garante que a rolagem horizontal nunca apareça */
+    width: 100%;
+}
+
+
+/* navbar  */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 3%;
+    height: 100px;
+    position:relative
+   
+    
+}
+
+.logo1 {
+    display: flex;
+    flex-direction: column; /* Coloca um link embaixo do outro */
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: 8px; /* Espaço entre os links */
+    margin-top: -20px; /* Espaço entre os links */
+}
+
+.nav-link {
+    color: #fff7f0;
+    font-size: 21px;
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f8ebff; /* Altera a cor ao passar o mouse */
+}
+
+
+
+
+
+
+
+
+
+.logo2 {
+    position: absolute;
+    right: 43%;
+}
+
+.logo2 img {
+    width: 110px; 
+    height: auto;
+}
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0; /* Remova o posicionamento absoluto que estava causando problemas */
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre a imagem e o texto */
+    flex-direction: row-reverse; /* Inverte a ordem: coloca o texto à esquerda da imagem */
+}
+
+.logo-text {
+    color: #fff7f0;
+    font-size: 39px;
+    font-weight: bold;
+}
+
+.logo-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    display: flex;
+    align-items: center;
+}
+
+.logo-link img {
+    pointer-events: none; /* Impede que o clique afete apenas a imagem */
+}
+.logo2:hover img {
+    transform: scale(1.1); /* Aumenta 10% o tamanho da imagem */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* menusinho */
+.menu {
+    margin-right: 1%;
+    display: flex;
+    align-items:center;
+    position: relative;
+}
+
+.menu-icon {
+    background: transparent;
+    display: flex;
+    flex-direction: row; /* barras horizonal */
+    justify-content: space-between; /* Espaça as barras */
+    width: 41px; /* Largura total do ícone */
+    height: 33px; /* Altura total do ícone */
+    cursor: pointer;
+    position: relative;
+    border: none;
+    z-index: 10;
+}
+
+.bar {
+    background-color: #fff7f0; /* Cor das barras */
+    height: 90%; /* Altura das barras */
+    width: 3px; /* Largura das barras */
+    transition: transform 0.6s ease; /* Adiciona transição suave */
+    position: relative;
+}
+
+.menu-icon:hover .bar:nth-child(1) {
+    transform: translateY(-12px) rotate(33deg) translateX(3px) scaleY(0.84) scaleX(0.9); 
+}
+
+.menu-icon:hover .bar:nth-child(2) {
+    transform: translateY(6px) rotate(90deg) translateX(-3px)  scaleY(1.2)   scaleX(0.9) ;
+}
+
+.menu-icon:hover .bar:nth-child(3) {
+    transform: translateY(-12px) rotate(-33deg) translateX(-3px) scaleY(0.84) scaleX(0.9) ;  
+}
+
+
+.menu-escondido {
+    display: block; /* Torne o menu visível para aplicar a transição */
+    opacity: 0; /* Inicialmente escondido */
+    transform: translateX(-30%); /* Inicialmente fora da tela, ajustado para aparecer ao lado do menu */
+    background-color: black;
+    padding: 50px;
+    position: absolute; /* Torne a posição absoluta para o efeito de deslizamento */
+    top: 20%; /* Posicione logo abaixo da navbar */
+    left: auto; /* Alinhe com o lado do menu */
+    right: 10px;
+    left: 69%;
+    width: 340px; /* Ajuste a largura conforme necessário */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Adiciona transição suave */
+    z-index: 9; /* Coloca o menu escondido sobre outros elementos */
+}
+
+.menu-escondido.show {
+    opacity: 1; /* Torna visível */
+    transform: translateX(0); /* Move para a posição original */
+}
+
+
+.menu-escondido a{
+    color:#fff7f0;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 16px;
+}
+.menu-escondido a:hover{
+    color: #fff7f0;
+    border-top: 4px solid #984ebf;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.learn-more-btn {
+    display: block;
+    background-color: #fff9f4; /* Cor de fundo semelhante à da imagem */
+    color: black;
+    font-weight: bold;
+    font-size: 22px; /* Aumenta o tamanho do texto */
+    padding: 15px 30px; /* Aumenta o botão */
+    border: 4px solid black; /* Borda mais grossa */
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 6px 6px 0px black; /* Sombra maior para efeito 3D */
+    width: fit-content; /* Mantém o tamanho ajustável */
+    margin: 180px auto; /* Centraliza o botão horizontalmente */
+}
+
+.learn-more-btn:hover {
+    background-color: #e87025;
+    color: white;
+    box-shadow: 6px 6px 0px #984ebf; /* Altera sombra ao passar o mouse */
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%; /* Aumenta a largura */
+    max-width: 1300px; /* Deixa maior */
+    margin: 50px auto; /* Centraliza e dá mais espaçamento */
+    padding: 40px; /* Mais espaço interno */
+    background: black; /* Fundo preto */
+    
+}
+
+.contact-left {
+    flex: 1;
+    text-align: left;
+    color: white; /* Texto branco */
+}
+
+.contact-left h2 {
+    font-size: 30px; /* Texto maior */
+    color: #eb7227; /* Laranja */
+    margin-bottom: 10px;
+}
+
+.contact-left p {
+    font-size: 20px;
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box {
+    background: black; /* Fundo preto */
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-box h3 {
+    font-size: 22px;
+    color: #eb7227;
+    margin-bottom: 15px;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-box label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255); /* Texto branco */
+}
+
+.contact-box input {
+    padding: 12px;
+    border: 1px solid #eb7227; /* Borda laranja */
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255); /* Texto branco */
+}
+
+.contact-box button {
+    background: #ed6714;
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Botão maior */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.contact-box button:hover {
+    background: #cc5200;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top: 0px;
+    
+    
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 3%; 
+}
+.footer-div{
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+.footer-div h2{
+    font-size: 18px;
+    color: #f3efeb;
+    margin-bottom: 16px;
+}
+.footer-div p, .footer-div a{
+    color: #f3efeb;
+    text-decoration: none;
+    font-size: 12px;
+}
+.footer-div a img{
+    margin: 0 10px;
+}
+.footer-bottom{
+    background-color: #111;
+    color: #f3efeb;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.l-footerlink{
+    margin-top: 9px;
+}
+
+.footer-div a .highlighted {
+    font-size: 18px; 
+    font-weight: bold;
+    color: #f3efeb;
+}
+
+.footer-div a .smaller {
+    font-size: 14px; 
+    margin-left: 5px; 
+    color: #f3efeb;
+}
+
+.footer-div a {
+    display: inline-flex; 
+    align-items: baseline; 
+    
+}
